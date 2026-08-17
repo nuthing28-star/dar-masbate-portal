@@ -1,11 +1,5 @@
 /* =========================================
-   DAR MASBATE
-   ONE-STOP LINK ACCESS
-========================================= */
-
-
-/* =========================================
-   RESET
+   GENERAL
 ========================================= */
 
 * {
@@ -14,22 +8,19 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-
-    background: #f6f8f7;
-
-    color: #123b24;
-
-    line-height: 1.5;
+    background: #f5f7f6;
+    color: #073b24;
 }
 
+a {
+    text-decoration: none;
+}
 
 
 /* =========================================
@@ -37,120 +28,142 @@ body {
 ========================================= */
 
 .header {
-
+    width: 100%;
     height: 82px;
 
     background: #ffffff;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 7%;
 
-    border-bottom: 1px solid #e6ebe7;
+    position: relative;
+    z-index: 100;
 
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
+    border-bottom: 1px solid #eeeeee;
 }
 
 
-/* Brand */
+/* =========================================
+   LOGO + BRAND
+========================================= */
 
 .brand {
-
     display: flex;
-
     align-items: center;
 
-    gap: 14px;
+    /* Small gap between logo and text */
+    gap: 10px;
+
+    flex-shrink: 0;
 }
 
-
 .logo {
-
-    width: 52px;
-
-    height: 52px;
-
-    border-radius: 50%;
-
-    background: #08752f;
-
-    color: white;
+    width: 54px;
+    height: 54px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+}
+
+.logo img {
+    width: 54px !important;
+    height: 54px !important;
+
+    max-width: 54px !important;
+    max-height: 54px !important;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.2;
+}
+
+.brand-text strong {
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #073b24;
+
+    white-space: nowrap;
+}
+
+.brand-text span {
+    margin-top: 4px;
 
     font-size: 12px;
 
-    font-weight: 900;
+    color: #777777;
 
-    border: 3px solid #f5c400;
-
+    white-space: nowrap;
 }
 
 
-.brand-text strong {
+/* =========================================
+   NAVIGATION
+========================================= */
 
-    display: block;
-
-    font-size: 18px;
-
-    color: #123b24;
-}
-
-
-.brand-text small {
-
-    display: block;
-
-    margin-top: 2px;
-
-    font-size: 11px;
-
-    color: #68756d;
-}
-
-
-
-/* Navigation */
-
-nav {
-
+.navigation {
     display: flex;
+    align-items: center;
 
-    gap: 34px;
+    /* SPACE BETWEEN HOME / RESOURCES / ABOUT */
+    gap: 50px;
+
+    flex-shrink: 0;
 }
 
+.navigation a {
+    position: relative;
 
-nav a {
+    color: #111111;
+
+    font-size: 14px;
+    font-weight: 600;
 
     text-decoration: none;
 
-    color: #18251d;
+    padding: 8px 0;
 
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: .2s;
+    transition:
+        color 0.2s ease,
+        text-decoration 0.2s ease;
 }
 
 
-nav a:hover {
+/* HOVER */
 
-    color: #08752f;
+.navigation a:hover {
+    color: red;
+    text-decoration: underline;
 }
 
+
+/* ACTIVE LINK */
+
+.navigation a.active {
+    color: #111111;
+}
+
+
+/* Remove the old green active line */
+
+.navigation a.active::after {
+    display: none;
+}
 
 
 /* =========================================
@@ -158,155 +171,128 @@ nav a:hover {
 ========================================= */
 
 .hero {
+    width: 100%;
 
-    min-height: 520px;
+    min-height: 540px;
 
     position: relative;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
 
-    padding: 80px 7%;
-
-
-    /*
-       IMPORTANT:
-
-       The building is placed behind
-       the green overlay here.
-    */
-
     background-image:
 
+        /* GREEN OVERLAY */
+
         linear-gradient(
-
             90deg,
-
-            rgba(3, 77, 37, 0.98) 0%,
-
-            rgba(3, 92, 43, 0.95) 35%,
-
-            rgba(3, 92, 43, 0.82) 58%,
-
-            rgba(3, 92, 43, 0.60) 100%
-
+            rgba(0, 86, 42, 0.98) 0%,
+            rgba(0, 91, 44, 0.94) 30%,
+            rgba(0, 91, 44, 0.72) 53%,
+            rgba(0, 91, 44, 0.35) 100%
         ),
+
+        /* BUILDING IMAGE */
 
         url("images/dar-masbate.jpg");
 
-
     background-size: cover;
 
-    background-position: center;
+    background-position: 70% center;
 
     background-repeat: no-repeat;
 }
 
 
-
-/* Decorative circles */
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-
-    height: 650px;
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 50%;
-
-    right: -280px;
-
-    top: -220px;
-
-}
-
+/* =========================================
+   HERO DECORATIVE CIRCLE
+========================================= */
 
 .hero::after {
-
     content: "";
 
     position: absolute;
 
-    width: 450px;
+    width: 350px;
+    height: 350px;
 
-    height: 450px;
-
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     border-radius: 50%;
 
-    left: -300px;
+    right: -120px;
+    bottom: -190px;
 
-    bottom: -350px;
-
+    pointer-events: none;
 }
 
 
-
-/* Hero content */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
+    width: 100%;
 
-    max-width: 650px;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 7%;
 
     position: relative;
 
-    z-index: 5;
+    z-index: 2;
 }
 
 
-.label {
+/* SMALL TITLE */
 
-    color: #f5c400;
+.eyebrow {
+    color: #ffc400;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 800;
 
     letter-spacing: 2px;
 
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
+
+/* MAIN TITLE */
 
 .hero h1 {
-
     color: #ffffff;
 
-    font-size: clamp(52px, 6vw, 82px);
+    font-size: clamp(55px, 6vw, 88px);
 
-    line-height: .98;
+    line-height: 0.95;
 
-    font-weight: 900;
+    font-weight: 800;
 
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
+
+/* YELLOW ACCESS */
 
 .hero h1 span {
-
     display: block;
 
-    color: #f5c400;
-
-    margin-top: 7px;
+    color: #ffc400;
 }
 
 
-.description {
+/* DESCRIPTION */
 
-    max-width: 580px;
+.hero p {
+    max-width: 610px;
 
-    color: #e4f0e8;
+    color: #ffffff;
 
     font-size: 18px;
 
@@ -316,241 +302,229 @@ nav a:hover {
 }
 
 
+/* =========================================
+   HERO BUTTON
+========================================= */
 
-/* Button */
-
-.button {
-
+.hero-button {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 18px;
 
-    background: white;
+    background: #ffffff;
 
-    color: #08752f;
+    color: #087a3d;
 
-    padding: 15px 22px;
+    padding: 18px 24px;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
-    text-decoration: none;
+    font-weight: 700;
 
     font-size: 15px;
 
-    font-weight: 800;
-
-    transition: .25s;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-
-.button:hover {
-
+.hero-button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-
-        0 15px 30px rgba(0,0,0,.25);
+        0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-
-.button span {
-
+.hero-button span {
     font-size: 20px;
 }
 
 
-
 /* =========================================
-   RESOURCES
+   RESOURCES SECTION
 ========================================= */
 
 .resources {
+    background: #f6f8f7;
 
-    max-width: 1200px;
+    padding: 70px 7% 90px;
 
-    margin: auto;
-
-    padding: 85px 30px;
+    min-height: 550px;
 }
 
 
-.section-title {
+/* SECTION HEADER */
 
+.section-heading {
     text-align: center;
 
-    margin-bottom: 45px;
+    margin-bottom: 42px;
 }
 
-
-.section-title p {
-
-    color: #08752f;
+.section-label {
+    color: #087a3d;
 
     font-size: 12px;
 
-    font-weight: 900;
+    font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
+.section-heading h2 {
+    font-size: 38px;
 
-.section-title h2 {
+    color: #073b24;
 
-    color: #123b24;
-
-    font-size: 40px;
-
-    line-height: 1.2;
-
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-
-.section-title span {
-
-    color: #7a857e;
+.section-heading p {
+    color: #7c8580;
 
     font-size: 14px;
 }
 
 
-
 /* =========================================
-   RESOURCE CARDS
+   RESOURCE GRID
 ========================================= */
 
 .resource-list {
+    width: 100%;
+
+    max-width: 1080px;
+
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 20px;
+    gap: 16px;
 }
 
+
+/* =========================================
+   RESOURCE CARD
+========================================= */
 
 .resource-card {
+    background: #ffffff;
 
-    min-height: 125px;
+    min-height: 112px;
 
-    background: white;
+    border: 1px solid #e1e7e3;
 
-    border: 1px solid #e1e8e3;
-
-    border-radius: 15px;
-
-    padding: 24px;
+    border-radius: 10px;
 
     display: flex;
 
     align-items: center;
+
+    padding: 20px 24px;
 
     gap: 20px;
 
-    text-decoration: none;
-
-    color: inherit;
-
     box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
 
-        0 5px 20px rgba(15,50,30,.05);
-
-    transition: .25s;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
-
 
 .resource-card:hover {
+    transform: translateY(-3px);
 
-    transform: translateY(-5px);
-
-    border-color: #a9d3b5;
+    border-color: #a7cdb8;
 
     box-shadow:
-
-        0 18px 35px rgba(15,50,30,.12);
+        0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 
+/* =========================================
+   RESOURCE ICON
+========================================= */
 
-/* Icons */
+.resource-icon {
+    width: 60px;
+    height: 60px;
 
-.icon {
-
-    width: 62px;
-
-    height: 62px;
-
-    min-width: 62px;
-
-    border-radius: 13px;
-
-    background: #e9f5ed;
+    border-radius: 12px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    font-size: 28px;
+    font-size: 27px;
+
+    flex-shrink: 0;
+}
+
+.staff-icon {
+    background: #e4f4eb;
+}
+
+.forms-icon {
+    background: #fff3d1;
+}
+
+.vehicle-icon {
+    background: #e2efff;
+}
+
+.reports-icon {
+    background: #eee4ff;
 }
 
 
+/* =========================================
+   RESOURCE TEXT
+========================================= */
 
-/* Text */
-
-.resource-text {
-
+.resource-info {
     flex: 1;
 }
 
+.resource-info h3 {
+    color: #111111;
 
-.resource-text h3 {
+    font-size: 16px;
 
-    color: #14221a;
-
-    font-size: 17px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
-
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
-
-.resource-text p {
-
-    color: #7b857e;
+.resource-info p {
+    color: #7a817e;
 
     font-size: 13px;
 }
 
 
+/* =========================================
+   RESOURCE ARROW
+========================================= */
 
-/* Arrow */
-
-.arrow {
-
-    color: #7c8981;
+.resource-arrow {
+    color: #087a3d;
 
     font-size: 27px;
 
-    transition: .25s;
+    transition:
+        transform 0.2s ease;
 }
 
-
-.resource-card:hover .arrow {
-
-    color: #08752f;
-
+.resource-card:hover .resource-arrow {
     transform: translateX(5px);
 }
-
 
 
 /* =========================================
@@ -558,82 +532,56 @@ nav a:hover {
 ========================================= */
 
 .about {
+    width: calc(100% - 14%);
 
-    max-width: 1200px;
+    max-width: 1000px;
 
-    margin: 0 auto 85px;
+    margin: 20px auto 70px;
 
-    padding: 55px;
+    padding: 35px 40px;
 
-    border-radius: 18px;
+    background: #073b24;
 
-    background:
+    color: #ffffff;
 
-        linear-gradient(
-
-            135deg,
-
-            #063e21,
-
-            #075d2c
-
-        );
-
-    color: white;
+    border-radius: 12px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 60px;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    position: relative;
+    gap: 40px;
 }
 
-
-.about p:first-child {
-
-    color: #f5c400;
-
-    font-size: 12px;
-
-    font-weight: 900;
+.about span {
+    font-size: 10px;
 
     letter-spacing: 2px;
 
-    margin-bottom: 10px;
-}
+    font-weight: 800;
 
+    color: #ffc400;
+}
 
 .about h2 {
+    font-size: 27px;
 
-    font-size: 38px;
+    margin-top: 10px;
 
-    line-height: 1.15;
+    line-height: 1.2;
 }
 
-
-.about h2 span {
-
-    display: block;
-
-    color: #f5c400;
+.about h2 strong {
+    color: #ffc400;
 }
 
+.about p {
+    font-size: 13px;
 
-.about div:last-child p {
+    line-height: 1.7;
 
-    color: #d0e1d6;
-
-    font-size: 16px;
-
-    line-height: 1.8;
+    align-self: center;
 }
-
 
 
 /* =========================================
@@ -641,14 +589,13 @@ nav a:hover {
 ========================================= */
 
 footer {
+    min-height: 70px;
 
-    min-height: 110px;
+    padding: 0 7%;
 
-    background: #0c1711;
+    background: #101820;
 
-    color: white;
-
-    padding: 30px 7%;
+    color: #ffffff;
 
     display: flex;
 
@@ -656,222 +603,283 @@ footer {
 
     justify-content: space-between;
 
-    gap: 20px;
+    font-size: 11px;
 }
-
 
 footer strong {
-
-    font-size: 15px;
+    font-size: 12px;
 }
-
 
 footer span {
-
-    color: #9ba89f;
-
-    font-size: 12px;
+    color: #87918d;
 }
-
-
-footer small {
-
-    color: #9ba89f;
-
-    font-size: 12px;
-}
-
 
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .header {
-
-        padding: 0 30px;
-
+        padding: 0 5%;
     }
 
-
-    .hero {
-
-        padding: 70px 30px;
-
+    .navigation {
+        gap: 35px;
     }
 
-
-    .resource-list {
-
-        grid-template-columns: 1fr;
-
+    .hero-content {
+        padding: 60px 5%;
     }
 
-
-    .about {
-
-        margin-left: 25px;
-
-        margin-right: 25px;
-
+    .resources {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
 }
-
 
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
 
+    /* HEADER */
 
     .header {
+        height: auto;
 
-        height: 70px;
+        min-height: 75px;
 
-        padding: 0 18px;
+        padding: 14px 5%;
 
+        gap: 20px;
     }
 
+
+    /* LOGO */
 
     .logo {
-
-        width: 44px;
-
-        height: 44px;
-
+        width: 44px !important;
+        height: 44px !important;
     }
 
+    .logo img {
+        width: 44px !important;
+        height: 44px !important;
+
+        max-width: 44px !important;
+        max-height: 44px !important;
+    }
+
+
+    /* BRAND */
+
+    .brand {
+        gap: 8px;
+    }
 
     .brand-text strong {
+        font-size: 16px;
+    }
 
-        font-size: 14px;
-
+    .brand-text span {
+        font-size: 10px;
     }
 
 
-    .brand-text small {
+    /* NAVIGATION */
 
-        display: none;
+    .navigation {
+        display: flex;
 
+        gap: 25px;
+    }
+
+    .navigation a {
+        font-size: 12px;
     }
 
 
-    nav {
-
-        display: none;
-
-    }
-
-
-    /* Hero */
+    /* HERO */
 
     .hero {
+        min-height: 550px;
 
-        min-height: 600px;
-
-        padding: 60px 22px;
-
-        background-position: 65% center;
-
+        background-position: 72% center;
     }
 
+    .hero-content {
+        padding: 60px 6%;
+    }
 
     .hero h1 {
-
-        font-size: 50px;
-
+        font-size: 52px;
     }
 
-
-    .description {
-
+    .hero p {
         font-size: 15px;
 
+        max-width: 500px;
     }
 
 
-    /* Resources */
-
-    .resources {
-
-        padding: 65px 20px;
-
-    }
-
-
-    .section-title h2 {
-
-        font-size: 32px;
-
-    }
-
+    /* RESOURCES */
 
     .resource-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        width: 90%;
 
         grid-template-columns: 1fr;
 
+        margin: 20px auto 50px;
+
+        padding: 30px;
     }
 
 
-    .resource-card {
-
-        min-height: 105px;
-
-        padding: 20px;
-
-    }
-
-
-    .icon {
-
-        width: 55px;
-
-        height: 55px;
-
-        min-width: 55px;
-
-        font-size: 24px;
-
-    }
-
-
-    /* About */
-
-    .about {
-
-        display: block;
-
-        margin: 0 20px 60px;
-
-        padding: 32px 25px;
-
-    }
-
-
-    .about h2 {
-
-        font-size: 30px;
-
-        margin-bottom: 25px;
-
-    }
-
-
-    /* Footer */
+    /* FOOTER */
 
     footer {
+        padding: 20px 5%;
 
         flex-direction: column;
 
-        align-items: flex-start;
+        gap: 10px;
 
-        padding: 30px 22px;
+        text-align: center;
+    }
+}
 
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 500px) {
+
+    /* Keep navigation visible */
+
+    .navigation {
+        display: flex;
+
+        gap: 18px;
     }
 
+    .navigation a {
+        font-size: 11px;
+    }
+
+
+    /* HEADER */
+
+    .header {
+        padding: 12px 4%;
+    }
+
+    .brand {
+        gap: 6px;
+    }
+
+    .logo,
+    .logo img {
+        width: 40px !important;
+        height: 40px !important;
+
+        max-width: 40px !important;
+        max-height: 40px !important;
+    }
+
+    .brand-text strong {
+        font-size: 14px;
+    }
+
+    .brand-text span {
+        font-size: 9px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 520px;
+
+        background-position: 70% center;
+    }
+
+    .hero-content {
+        padding: 50px 6%;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* RESOURCES */
+
+    .resources {
+        padding: 55px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .resource-card {
+        padding: 17px;
+
+        gap: 14px;
+    }
+
+    .resource-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 22px;
+    }
+
+    .resource-info h3 {
+        font-size: 14px;
+    }
+
+    .resource-info p {
+        font-size: 11px;
+    }
+
+    .resource-arrow {
+        font-size: 22px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 25px;
+    }
+
+    .about h2 {
+        font-size: 23px;
+    }
 }
