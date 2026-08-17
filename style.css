@@ -71,18 +71,21 @@ a {
     flex-shrink: 0;
 
     overflow: hidden;
+
+    background: transparent;
 }
 
 .logo img {
-    width: 54px !important;
-    height: 54px !important;
+    width: 54px;
+    height: 54px;
 
-    max-width: 54px !important;
-    max-height: 54px !important;
+    max-width: 54px;
+    max-height: 54px;
 
     display: block;
 
     object-fit: contain;
+}
 }
 
 .brand-text {
@@ -662,17 +665,17 @@ footer span {
 
     /* LOGO */
 
-    .logo {
-        width: 44px !important;
-        height: 44px !important;
+     .logo {
+        width: 45px;
+        height: 45px;
     }
 
     .logo img {
-        width: 44px !important;
-        height: 44px !important;
-
-        max-width: 44px !important;
-        max-height: 44px !important;
+        width: 45px;
+        height: 45px;
+        max-width: 45px;
+        max-height: 45px;
+        object-fit: contain;
     }
 
 
