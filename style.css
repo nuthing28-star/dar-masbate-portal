@@ -1,5 +1,5 @@
 /* =========================================
-   GENERAL
+   RESET
 ========================================= */
 
 * {
@@ -40,31 +40,46 @@ a {
     padding: 0 7%;
 
     position: relative;
-    z-index: 100;
+    z-index: 1000;
 
     border-bottom: 1px solid #eeeeee;
+
+    overflow: hidden;
 }
 
 
 /* =========================================
-   LOGO + BRAND
+   BRAND
 ========================================= */
 
 .brand {
     display: flex;
     align-items: center;
 
-    /* Small gap between logo and text */
     gap: 10px;
+
+    height: 100%;
 
     flex-shrink: 0;
 }
 
+
+/* =========================================
+   DAR LOGO
+========================================= */
+
 .logo {
-    width: 54px;
-    height: 54px;
+    width: 54px !important;
+    height: 54px !important;
+
+    min-width: 54px !important;
+    min-height: 54px !important;
+
+    max-width: 54px !important;
+    max-height: 54px !important;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -76,32 +91,48 @@ a {
 }
 
 .logo img {
-    width: 54px;
-    height: 54px;
+    width: 54px !important;
+    height: 54px !important;
 
-    max-width: 54px;
-    max-height: 54px;
+    min-width: 54px !important;
+    min-height: 54px !important;
 
-    display: block;
+    max-width: 54px !important;
+    max-height: 54px !important;
 
-    object-fit: contain;
+    display: block !important;
+
+    object-fit: contain !important;
+
+    position: static !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
 }
-}
+
+
+/* =========================================
+   BRAND TEXT
+========================================= */
 
 .brand-text {
     display: flex;
+
     flex-direction: column;
 
+    justify-content: center;
+
     line-height: 1.2;
+
+    white-space: nowrap;
 }
 
 .brand-text strong {
     font-size: 18px;
+
     font-weight: 700;
 
     color: #073b24;
-
-    white-space: nowrap;
 }
 
 .brand-text span {
@@ -110,8 +141,6 @@ a {
     font-size: 12px;
 
     color: #777777;
-
-    white-space: nowrap;
 }
 
 
@@ -121,9 +150,9 @@ a {
 
 .navigation {
     display: flex;
+
     align-items: center;
 
-    /* SPACE BETWEEN HOME / RESOURCES / ABOUT */
     gap: 50px;
 
     flex-shrink: 0;
@@ -135,11 +164,12 @@ a {
     color: #111111;
 
     font-size: 14px;
+
     font-weight: 600;
 
-    text-decoration: none;
-
     padding: 8px 0;
+
+    text-decoration: none;
 
     transition:
         color 0.2s ease,
@@ -151,21 +181,8 @@ a {
 
 .navigation a:hover {
     color: red;
+
     text-decoration: underline;
-}
-
-
-/* ACTIVE LINK */
-
-.navigation a.active {
-    color: #111111;
-}
-
-
-/* Remove the old green active line */
-
-.navigation a.active::after {
-    display: none;
 }
 
 
@@ -181,13 +198,12 @@ a {
     position: relative;
 
     display: flex;
+
     align-items: center;
 
     overflow: hidden;
 
     background-image:
-
-        /* GREEN OVERLAY */
 
         linear-gradient(
             90deg,
@@ -196,8 +212,6 @@ a {
             rgba(0, 91, 44, 0.72) 53%,
             rgba(0, 91, 44, 0.35) 100%
         ),
-
-        /* BUILDING IMAGE */
 
         url("images/dar-masbate.jpg");
 
@@ -210,7 +224,7 @@ a {
 
 
 /* =========================================
-   HERO DECORATIVE CIRCLE
+   HERO CIRCLE
 ========================================= */
 
 .hero::after {
@@ -251,7 +265,7 @@ a {
 }
 
 
-/* SMALL TITLE */
+/* EYEBROW */
 
 .eyebrow {
     color: #ffc400;
@@ -266,7 +280,7 @@ a {
 }
 
 
-/* MAIN TITLE */
+/* TITLE */
 
 .hero h1 {
     color: #ffffff;
@@ -279,9 +293,6 @@ a {
 
     margin-bottom: 28px;
 }
-
-
-/* YELLOW ACCESS */
 
 .hero h1 span {
     display: block;
@@ -346,7 +357,7 @@ a {
 
 
 /* =========================================
-   RESOURCES SECTION
+   RESOURCES
 ========================================= */
 
 .resources {
@@ -358,7 +369,9 @@ a {
 }
 
 
-/* SECTION HEADER */
+/* =========================================
+   SECTION HEADING
+========================================= */
 
 .section-heading {
     text-align: center;
@@ -453,7 +466,7 @@ a {
 
 
 /* =========================================
-   RESOURCE ICON
+   ICONS
 ========================================= */
 
 .resource-icon {
@@ -513,7 +526,7 @@ a {
 
 
 /* =========================================
-   RESOURCE ARROW
+   ARROW
 ========================================= */
 
 .resource-arrow {
@@ -521,8 +534,7 @@ a {
 
     font-size: 27px;
 
-    transition:
-        transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .resource-card:hover .resource-arrow {
@@ -640,7 +652,6 @@ footer span {
         padding-left: 5%;
         padding-right: 5%;
     }
-
 }
 
 
@@ -653,29 +664,11 @@ footer span {
     /* HEADER */
 
     .header {
-        height: auto;
+        height: 70px;
 
-        min-height: 75px;
+        padding: 10px 5%;
 
-        padding: 14px 5%;
-
-        gap: 20px;
-    }
-
-
-    /* LOGO */
-
-     .logo {
-        width: 45px;
-        height: 45px;
-    }
-
-    .logo img {
-        width: 45px;
-        height: 45px;
-        max-width: 45px;
-        max-height: 45px;
-        object-fit: contain;
+        overflow: hidden;
     }
 
 
@@ -685,25 +678,55 @@ footer span {
         gap: 8px;
     }
 
+
+    /* LOGO */
+
+    .logo {
+        width: 45px !important;
+        height: 45px !important;
+
+        min-width: 45px !important;
+        min-height: 45px !important;
+
+        max-width: 45px !important;
+        max-height: 45px !important;
+    }
+
+    .logo img {
+        width: 45px !important;
+        height: 45px !important;
+
+        min-width: 45px !important;
+        min-height: 45px !important;
+
+        max-width: 45px !important;
+        max-height: 45px !important;
+
+        object-fit: contain !important;
+    }
+
+
+    /* BRAND TEXT */
+
     .brand-text strong {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .brand-text span {
-        font-size: 10px;
+        font-size: 9px;
+
+        margin-top: 3px;
     }
 
 
     /* NAVIGATION */
 
     .navigation {
-        display: flex;
-
-        gap: 25px;
+        gap: 18px;
     }
 
     .navigation a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
@@ -725,12 +748,10 @@ footer span {
 
     .hero p {
         font-size: 15px;
-
-        max-width: 500px;
     }
 
 
-    /* RESOURCES */
+    /* RESOURCE GRID */
 
     .resource-list {
         grid-template-columns: 1fr;
@@ -765,41 +786,47 @@ footer span {
 
 
 /* =========================================
-   SMALL PHONES
+   SMALL MOBILE
 ========================================= */
 
 @media (max-width: 500px) {
 
-    /* Keep navigation visible */
-
-    .navigation {
-        display: flex;
-
-        gap: 18px;
-    }
-
-    .navigation a {
-        font-size: 11px;
-    }
-
-
-    /* HEADER */
-
     .header {
-        padding: 12px 4%;
+        height: 65px;
+
+        padding: 8px 4%;
     }
 
-    .brand {
-        gap: 6px;
+
+    /* LOGO */
+
+    .logo {
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        min-height: 40px !important;
+
+        max-width: 40px !important;
+        max-height: 40px !important;
     }
 
-    .logo,
     .logo img {
         width: 40px !important;
         height: 40px !important;
 
+        min-width: 40px !important;
+        min-height: 40px !important;
+
         max-width: 40px !important;
         max-height: 40px !important;
+    }
+
+
+    /* BRAND */
+
+    .brand {
+        gap: 7px;
     }
 
     .brand-text strong {
@@ -807,7 +834,18 @@ footer span {
     }
 
     .brand-text span {
-        font-size: 9px;
+        font-size: 8px;
+    }
+
+
+    /* NAVIGATION */
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation a {
+        font-size: 10px;
     }
 
 
